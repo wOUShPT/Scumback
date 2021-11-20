@@ -1,0 +1,44 @@
+{
+    "name": "BoomerangControlls",
+    "maps": [
+        {
+            "name": "BoomerangGame",
+            "id": "99ce995b-dc0a-4ae5-a0cc-0119f56b8d0f",
+            "actions": [
+                {
+                    "name": "P1 Throw",
+                    "type": "Button",
+                    "id": "7ecae20c-b7a0-4ffe-8ada-829db69676d9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap"
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "50c5f81d-a701-4b06-87e5-1a9d8ab925d8",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "P1 Throw",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6537587e-470f-4bcc-a6dd-d530aa1c0129",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "P1 Throw",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
