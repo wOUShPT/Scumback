@@ -15,7 +15,7 @@ public class PlayerInputManagerHandler : MonoBehaviour
     {
         if (PlayerInputManager.instance.playerCount == 2)
         {
-            SceneManager.LoadScene("Gustavo");
+            SceneManager.LoadScene("Boomerang");
         }
     }
 }

@@ -21,6 +21,7 @@ public class PlayerInputController : MonoBehaviour
     {
         public float action;
         public float dodge;
+        public float horizontalMovement;
     }
 
     public void SetPlayerAction(InputAction.CallbackContext context)
@@ -31,6 +32,11 @@ public class PlayerInputController : MonoBehaviour
     public void SetPlayerDodge(InputAction.CallbackContext context)
     {
         input.dodge = context.ReadValue<float>();
+    }
+    
+    public void SetMove(InputAction.CallbackContext context)
+    {
+        input.horizontalMovement = context.ReadValue<float>();
     }
     
 }

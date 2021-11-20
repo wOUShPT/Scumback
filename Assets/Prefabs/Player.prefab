@@ -67,12 +67,12 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 1
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 3aebf913-e500-4858-a77d-e6552f4a2973
-    m_ActionName: Boat/Action[/Keyboard/space]
+    m_ActionId: ac4bc0aa-2fb2-4f6c-aed4-5c1d2f5204b6
+    m_ActionName: Player/Action[/DualShock4GamepadHID/buttonSouth,/XInputControllerWindows/buttonSouth,/XInputControllerWindows/buttonSouth,/XInputControllerWindows/buttonSouth,/XInputControllerWindows/buttonSouth]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2093787502}
@@ -83,15 +83,35 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 1
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: b77db770-5d9e-4fd8-b093-165380a53cb0
-    m_ActionName: Boat/Dodge[/Keyboard/enter]
+    m_ActionId: f4105798-7d0b-4a9b-8e50-d6171264bf54
+    m_ActionName: Player/Dodge[/DualShock4GamepadHID/buttonWest,/XInputControllerWindows/buttonWest,/XInputControllerWindows/buttonWest,/XInputControllerWindows/buttonWest,/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 01fb05ed-ab97-418a-9baa-bc012bedb4f6
+    m_ActionName: Player/Throw[/DualShock4GamepadHID/buttonSouth,/XInputControllerWindows/buttonSouth,/XInputControllerWindows/buttonSouth,/XInputControllerWindows/buttonSouth,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2093787502}
+        m_TargetAssemblyTypeName: PlayerInputController, Assembly-CSharp
+        m_MethodName: SetMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 90e715e3-b144-4806-acfd-98195bea7e22
+    m_ActionName: Player/HorizontalMovement[/DualShock4GamepadHID/leftStick/left,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/left,/DualShock4GamepadHID/leftStick/right,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right,/DualShock4GamepadHID/dpad/left,/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/left,/DualShock4GamepadHID/dpad/right,/XInputControllerWindows/dpad/right,/XInputControllerWindows/dpad/right,/XInputControllerWindows/dpad/right,/XInputControllerWindows/dpad/right]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Boat
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &2093787502

@@ -8,8 +8,6 @@ using UnityEngine.InputSystem;
 
 public class BoatController : MonoBehaviour
 {
-    private PlayerInputManagerHandler inputManagerHandler;
-
     private List<PlayerInputController> _playersControllers;
     [SerializeField] private Transform boatTransform;
 
@@ -20,7 +18,6 @@ public class BoatController : MonoBehaviour
 
     private void Start()
     {
-        inputManagerHandler = FindObjectOfType<PlayerInputManagerHandler>();
         _startPosition = boatTransform.position;
         _currentPosition = _startPosition;
         _playersControllers = FindObjectsOfType<PlayerInputController>().ToList();
@@ -34,7 +31,6 @@ public class BoatController : MonoBehaviour
     {
         foreach (var playerController in _playersControllers)
         {
-            //Debug.Log(playerController.input.action);
             if (playerController.input.action > 0 && playerController.PlayerIndex == 0)
             {
                 _currentPosition.x -= speed * Time.deltaTime;

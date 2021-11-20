@@ -960,7 +960,6 @@ GameObject:
   - component: {fileID: 1924328076}
   - component: {fileID: 1924328078}
   - component: {fileID: 1924328079}
-  - component: {fileID: 1924328080}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1078,49 +1077,3 @@ MonoBehaviour:
   keyPressed: 0
   playerInput: {fileID: 0}
   horizontalMovement: 0
---- !u!114 &1924328080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1924328075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 34df9a1739bb1ee4084e8250f9897af5, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1924328079}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: SetMove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 78b58965-291e-4115-94e5-5265d0a99a19
-    m_ActionName: Player/2D
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
