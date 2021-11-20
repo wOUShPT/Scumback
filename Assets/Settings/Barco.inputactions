@@ -1,0 +1,64 @@
+{
+    "name": "Barco",
+    "maps": [
+        {
+            "name": "Boat",
+            "id": "7ced6f03-1aee-4643-9ac2-f9a8d6481135",
+            "actions": [
+                {
+                    "name": "Action",
+                    "type": "Button",
+                    "id": "3aebf913-e500-4858-a77d-e6552f4a2973",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Dodge",
+                    "type": "Button",
+                    "id": "b77db770-5d9e-4fd8-b093-165380a53cb0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5a633b3a-b04b-4abd-b0b4-f84a11d6db16",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "Tap(duration=0.1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "047c7728-eb1b-4494-896b-c4f5d890358a",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dodge",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Gamepad",
+            "bindingGroup": "Gamepad",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
