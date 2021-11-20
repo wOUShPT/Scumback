@@ -1,0 +1,55 @@
+{
+    "name": "InputKr",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "611d157c-9183-4257-a26f-5e1b3ed57db8",
+            "actions": [
+                {
+                    "name": "2D",
+                    "type": "Button",
+                    "id": "78b58965-291e-4115-94e5-5265d0a99a19",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "1D Axis",
+                    "id": "dbc8d7a9-ac1a-4677-8c48-3dca6b0bab68",
+                    "path": "1DAxis",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "2D",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "46d20568-03ac-42da-90d8-8defd849fcfe",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "2D",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "97cfa24b-d7ee-4339-aaa6-53a4417d627b",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "2D",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
