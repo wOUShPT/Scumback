@@ -201,7 +201,10 @@ MonoBehaviour:
   HasLoot: 0
   HitABoomerang: 0
   LootList:
-  - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 21300000, guid: 2fba2563841616748ba423ae9fcd4128, type: 3}
+  - {fileID: 21300000, guid: 110c493a7ed21744d862c7896819d1d9, type: 3}
+  - {fileID: 21300000, guid: 9ba276b7839d06b46b0bd1cfbbd501b0, type: 3}
+  - {fileID: 21300000, guid: af1165de11774ab458d34715857fad35, type: 3}
 --- !u!95 &5062930278382722069
 Animator:
   serializedVersion: 3

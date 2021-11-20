@@ -55,6 +55,7 @@ public class BoomerangLogic : MonoBehaviour
         GameObject go = Instantiate(new GameObject(),transform);
         Image x = go.AddComponent<Image>();
         x.sprite = LootList[Random.Range(0,LootList.Count)];
+        x.SetNativeSize();
         HasLoot = true;
     }
 
