@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using FMOD.Studio;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -67,6 +69,11 @@ public class BoatController : MonoBehaviour
 
     private bool isGameOver;
 
+    private Score _scoreScript;
+
+    private FMOD.Studio.EventInstance rugido;
+    private FMOD.Studio.EventInstance splash;
+
     private void Start()
     {
         _startPosition = boatTransform.position;
@@ -91,6 +98,10 @@ public class BoatController : MonoBehaviour
         _timeUpText.enabled = false;
         gameOverText.enabled = false;
         StartCoroutine(SetChances());
+        _scoreScript = FindObjectOfType<Score>();
+
+        rugido = FMODUnity.RuntimeManager.CreateInstance("event:/Jogo do barco/Rugido");
+        splash = FMODUnity.RuntimeManager.CreateInstance("event:/Jogo do barco/Splash mãos");
     }
 
     void Update()
@@ -114,6 +125,7 @@ public class BoatController : MonoBehaviour
                     _currentPosition.x -= speed * Time.deltaTime;
                     _player1LastActionTime = Time.time;
                     _player1Animator.SetTrigger("Action");
+                    splash.start();
                 }
                 else if (playerController.input.action == 0 && playerController.PlayerIndex == 0)
                 {
@@ -258,6 +270,11 @@ public class BoatController : MonoBehaviour
         }
         else
         {
+            if (isPlayer1Dead || isPlayer2Dead)
+            {
+                splash.stop(STOP_MODE.IMMEDIATE);
+                rugido.start();
+            }
             StartCoroutine(DeathAnimation());
             Debug.Log("Gameover");
         }
@@ -266,22 +283,25 @@ public class BoatController : MonoBehaviour
 
     IEnumerator DeathAnimation()
     {
+        
         if (isPlayer1Dead)
         {
+            yield return new WaitForSeconds(1f);
             _warning1.alpha = 0;
             _croco1Animator.SetBool("Attack", true);
             croco1.localPosition = new Vector3(croco1.localPosition.x, 1f, croco1.localPosition.z);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2f);
             _player1Animator.SetBool("Die", true);
             croco1.localPosition = new Vector3(croco1.localPosition.x, -1f, croco1.localPosition.z);
         }
 
         if (isPlayer2Dead)
         {
+            yield return new WaitForSeconds(1f);
             _warning2.alpha = 0;
             _croco2Animator.SetBool("Attack", true);
             croco2.localPosition = new Vector3(croco2.localPosition.x, 1f, croco2.localPosition.z);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2f);
             _player2Animator.SetBool("Die", true);
             croco2.localPosition = new Vector3(croco2.localPosition.x, -1f, croco2.localPosition.z);
         }
@@ -294,6 +314,18 @@ public class BoatController : MonoBehaviour
         {
             gameOverText.enabled = true;
         }
+
+        if (boatTransform.position.x < 0)
+        {
+            Debug.Log(_scoreScript);
+            _scoreScript.player1Score++;
+        }
+
+        if (boatTransform.position.x > 0)
+        {
+            _scoreScript.player2Score++;
+        }
+        SceneManager.LoadScene("Score");
         yield return null;
     }
     

@@ -1,5 +1,97 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9214216670238910736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/M\xFAsica/Fight song"
+  m_EditorClassIdentifier: 
+  Path: "event:/M\xFAsica/Fight song"
+  guid: 888cf823ffba674e80ea9a65984bc3bd
+  Banks:
+  - {fileID: -7770372124642677106}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 32238
+--- !u!114 &-8573462941487475996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/M\xFAsica/Main menu"
+  m_EditorClassIdentifier: 
+  Path: "event:/M\xFAsica/Main menu"
+  guid: c2434fa1f4e39349a84c8a1bc9503b99
+  Banks:
+  - {fileID: -7770372124642677106}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 28245
+--- !u!114 &-8042074354382765250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Jogo da porrada/Puff
+  m_EditorClassIdentifier: 
+  Path: event:/Jogo da porrada/Puff
+  guid: 5c6300b283d4174ebf195ae1c018ebb2
+  Banks:
+  - {fileID: -7770372124642677106}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 625
+--- !u!114 &-7979557795930621722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Jogo do barco/Splash m\xE3os"
+  m_EditorClassIdentifier: 
+  Path: "event:/Jogo do barco/Splash m\xE3os"
+  guid: 0d1ac89cc1f9614fa4883c97f830a884
+  Banks:
+  - {fileID: -7770372124642677106}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 548
 --- !u!114 &-7770372124642677106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,10 +107,10 @@ MonoBehaviour:
   Path: ../INVICTVSGameJam21FMOD/INVICTVSGameJam21/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637730147388061295
+  lastModified: 637730832751552132
   FileSizes:
   - Name: Desktop
-    Value: 1012
+    Value: 3286656
   Exists: 1
 --- !u!114 &-7534267558194728245
 MonoBehaviour:
@@ -40,6 +132,75 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1012
   Exists: 1
+--- !u!114 &-7159304846746247855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Jogo do bumerangue/Bumerangue throw
+  m_EditorClassIdentifier: 
+  Path: event:/Jogo do bumerangue/Bumerangue throw
+  guid: 970a33773a5af547a5c4869da2d33d7d
+  Banks:
+  - {fileID: -7770372124642677106}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 225
+--- !u!114 &-5921742191369944280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Jogo da porrada/Punch
+  m_EditorClassIdentifier: 
+  Path: event:/Jogo da porrada/Punch
+  guid: f0bdde40450ba745af488141b2e1dafc
+  Banks:
+  - {fileID: -7770372124642677106}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 531
+--- !u!114 &-5071053100944431221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Jogo do bumerangue/Bumerangue flight
+  m_EditorClassIdentifier: 
+  Path: event:/Jogo do bumerangue/Bumerangue flight
+  guid: 7a885ca1f13975469e9d70844d6c02fb
+  Banks:
+  - {fileID: -7770372124642677106}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5406
 --- !u!114 &-4866506631713612138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,6 +221,144 @@ MonoBehaviour:
   - Name: Desktop
     Value: 700
   Exists: 1
+--- !u!114 &-4508054250540498557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Jogo do barco/Ambi\xEAncia mar"
+  m_EditorClassIdentifier: 
+  Path: "event:/Jogo do barco/Ambi\xEAncia mar"
+  guid: ec7eef71cda2604d8cb22bcaa76b0f8a
+  Banks:
+  - {fileID: -7770372124642677106}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 76000
+--- !u!114 &-2758757409235553953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/M\xFAsica/Barco song"
+  m_EditorClassIdentifier: 
+  Path: "event:/M\xFAsica/Barco song"
+  guid: afb2c779305f8c48bb796a1e3c78fbb4
+  Banks:
+  - {fileID: -7770372124642677106}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 26063
+--- !u!114 &-2304079157891576448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Jogo da porrada
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Jogo da porrada
+  guid: 2d1df4abced1d545be94ab768ce8a0a5
+  Banks:
+  - {fileID: -7770372124642677106}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-2265979261779812252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Jogo do bumerangue
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Jogo do bumerangue
+  guid: 6daf4dd019961a47a54f2f0f8250c492
+  Banks:
+  - {fileID: -7770372124642677106}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-1110292434384311045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Jogo do bumerangue/Rummaging
+  m_EditorClassIdentifier: 
+  Path: event:/Jogo do bumerangue/Rummaging
+  guid: 781d76109ea25a4da8bf54dd3329097b
+  Banks:
+  - {fileID: -7770372124642677106}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5000
+--- !u!114 &-271493327444245926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Jogo da porrada/Dodge
+  m_EditorClassIdentifier: 
+  Path: event:/Jogo da porrada/Dodge
+  guid: 5bf1c11424ec1442b173b8f41320c8d1
+  Banks:
+  - {fileID: -7770372124642677106}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 273
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,14 +374,107 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: 2597052220311487340}
   - {fileID: -7770372124642677106}
-  EditorEvents: []
+  EditorEvents:
+  - {fileID: -7979557795930621722}
+  - {fileID: 8931846386534510895}
+  - {fileID: 2249751230466741566}
+  - {fileID: -2304079157891576448}
+  - {fileID: 4847033595162832245}
+  - {fileID: 7661609319678129347}
+  - {fileID: -271493327444245926}
+  - {fileID: -8042074354382765250}
+  - {fileID: -2265979261779812252}
+  - {fileID: 7566131783280154949}
+  - {fileID: -1110292434384311045}
+  - {fileID: -5071053100944431221}
+  - {fileID: 1300999839072546254}
+  - {fileID: -9214216670238910736}
+  - {fileID: -7159304846746247855}
+  - {fileID: -2758757409235553953}
+  - {fileID: 4246168258245577411}
+  - {fileID: 607868713035141442}
+  - {fileID: -8573462941487475996}
+  - {fileID: 8593065302769632177}
+  - {fileID: 4702328756929917781}
+  - {fileID: -4508054250540498557}
+  - {fileID: -5921742191369944280}
+  - {fileID: 5994671340033934294}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7770372124642677106}
   StringsBanks:
   - {fileID: 2597052220311487340}
-  stringsBankWriteTime: 637730147388081233
+  stringsBankWriteTime: 637730815895037864
   cacheVersion: 8
+--- !u!114 &607868713035141442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Jogo do barco/Rugido
+  m_EditorClassIdentifier: 
+  Path: event:/Jogo do barco/Rugido
+  guid: c02f58f202e6c04ab4d93954c6d56eed
+  Banks:
+  - {fileID: -7770372124642677106}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3664
+--- !u!114 &1300999839072546254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/M\xFAsica/Bumerangue song"
+  m_EditorClassIdentifier: 
+  Path: "event:/M\xFAsica/Bumerangue song"
+  guid: 7da52480572ca540bb0ca2bc61d60c00
+  Banks:
+  - {fileID: -7770372124642677106}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 34000
+--- !u!114 &2249751230466741566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Jogo do barco
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Jogo do barco
+  guid: 1719b1fe87e7f34abef1580474232e80
+  Banks:
+  - {fileID: -7770372124642677106}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &2597052220311487340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,8 +490,192 @@ MonoBehaviour:
   Path: ../INVICTVSGameJam21FMOD/INVICTVSGameJam21/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637730147388081233
+  lastModified: 637730815895037864
   FileSizes:
   - Name: Desktop
-    Value: 700
+    Value: 2076
   Exists: 1
+--- !u!114 &4246168258245577411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Jogo da porrada/Dor char B
+  m_EditorClassIdentifier: 
+  Path: event:/Jogo da porrada/Dor char B
+  guid: b094519d431a0446b941b00159419a45
+  Banks:
+  - {fileID: -7770372124642677106}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 700
+--- !u!114 &4702328756929917781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Jogo do bumerangue/Seagull hit
+  m_EditorClassIdentifier: 
+  Path: event:/Jogo do bumerangue/Seagull hit
+  guid: e447b317de49504f81949053dad99bc9
+  Banks:
+  - {fileID: -7770372124642677106}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1613
+--- !u!114 &4847033595162832245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Menu
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Menu
+  guid: 3fe1831c7b66294cbc9e6807e673cfb0
+  Banks:
+  - {fileID: -7770372124642677106}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &5994671340033934294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Jogo da porrada/Dor char A
+  m_EditorClassIdentifier: 
+  Path: event:/Jogo da porrada/Dor char A
+  guid: f988a5ca0c6cb54ab544cecfc737d0c9
+  Banks:
+  - {fileID: -7770372124642677106}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 562
+--- !u!114 &7566131783280154949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Jogo do bumerangue/Av\xF3"
+  m_EditorClassIdentifier: 
+  Path: "event:/Jogo do bumerangue/Av\xF3"
+  guid: 72176367df8d224380aeff21846614cf
+  Banks:
+  - {fileID: -7770372124642677106}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 965
+--- !u!114 &7661609319678129347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Jogo da porrada/Raiva char A
+  m_EditorClassIdentifier: 
+  Path: event:/Jogo da porrada/Raiva char A
+  guid: 4968a53f8b5d9b48a9cb18ec1d8cf1bf
+  Banks:
+  - {fileID: -7770372124642677106}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1125
+--- !u!114 &8593065302769632177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Jogo do bumerangue/Wall hit
+  m_EditorClassIdentifier: 
+  Path: event:/Jogo do bumerangue/Wall hit
+  guid: d9ee988a21cb024d97f544bf592dd811
+  Banks:
+  - {fileID: -7770372124642677106}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 500
+--- !u!114 &8931846386534510895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Jogo da porrada/Raiva char B
+  m_EditorClassIdentifier: 
+  Path: event:/Jogo da porrada/Raiva char B
+  guid: 138f37b67d536742b84abb0a0e4249ed
+  Banks:
+  - {fileID: -7770372124642677106}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 756
