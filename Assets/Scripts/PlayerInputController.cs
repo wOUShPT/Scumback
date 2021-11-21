@@ -6,6 +6,7 @@ using UnityEngine.Serialization;
 
 public class PlayerInputController : MonoBehaviour
 {
+    public float Score = 0f;
     private PlayerInput _player;
     private int playerIndex;
     public int PlayerIndex => playerIndex;

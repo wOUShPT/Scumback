@@ -9,16 +9,22 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 07cdae1e3fbdcb0458c48e97d0d602bc
+  - enabled: 1
     path: Assets/Scenes/Lobby.unity
     guid: 10a63a5ce44c95741ba9aa3613326651
   - enabled: 1
-    path: Assets/Scenes/Gustavo.unity
+    path: Assets/Scenes/Boat.unity
     guid: a232800d33b0e6a49ba08cd199ee5759
+  - enabled: 1
+    path: Assets/Scenes/Boomerang.unity
+    guid: 1a042d41f22e741478ddc4cceaa25772
   - enabled: 1
     path: Assets/Scenes/KinecticRage.unity
     guid: 6ab0b43b99f5da041904f8d61a75170b
   - enabled: 1
-    path: Assets/Scenes/Boomerang.unity
-    guid: 1a042d41f22e741478ddc4cceaa25772
+    path: Assets/Scenes/Score.unity
+    guid: b7caf8d224df4cf4cb0693323a1c5f5e
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: b34a8215dca2ed84e8c6bbcb1a6cfc25, type: 2}

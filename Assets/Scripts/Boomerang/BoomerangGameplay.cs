@@ -9,10 +9,8 @@ public class BoomerangGameplay : MonoBehaviour
     public float ThrowRotationSpeed = 50f;
 
     //Game Object References
-    public GameObject Player;
-    public BoomerangPlayer PlayerScript;
-    public GameObject Window;
-    public GameObject Boomerang;
+    //public List<GameObject> Player;
+    public List<BoomerangPlayer> PlayerScript;
 
     //Timers
     public float StarTime = 2f;
@@ -31,9 +29,13 @@ public class BoomerangGameplay : MonoBehaviour
     
     void Start()
     {
-        PlayerScript = Player.GetComponent<BoomerangPlayer>();
-        PlayerScript.Angles = ThrowAngle / 2;
-        PlayerScript.ThrowRotationSpeed = ThrowRotationSpeed;
+        //PlayerScript = Player.GetComponent<BoomerangPlayer>();
+
+        foreach(BoomerangPlayer ps in PlayerScript)
+        {
+            ps.Angles = ThrowAngle / 2;
+            ps.ThrowRotationSpeed = ThrowRotationSpeed;
+        }
         GameState = State.START;
         Timer = StarTime;
     }
@@ -41,7 +43,10 @@ public class BoomerangGameplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawRay(Player.transform.position, Player.transform.right*1000 , Color.red);
+        foreach (BoomerangPlayer p in PlayerScript)
+        {
+            Debug.DrawRay(p.transform.position, p.transform.right * 1000, Color.red);
+        } 
         switch (GameState)
         {
             case State.START:
@@ -51,7 +56,8 @@ public class BoomerangGameplay : MonoBehaviour
                 if (Timer <= 0)
                 {
                     GameState = State.AIM;
-                    PlayerScript.ThrowPhase = true;
+                    foreach (BoomerangPlayer p in PlayerScript)
+                        p.ThrowPhase = true;
                     Timer = GameTime;
                 }
                 break;
@@ -61,7 +67,11 @@ public class BoomerangGameplay : MonoBehaviour
                 if (Timer <= 0)
                 {
                     GameState = State.RETURN;
-                    PlayerScript.ThrowPhase = false;
+                    foreach (BoomerangPlayer p in PlayerScript)
+                    {
+                        p.ThrowPhase = false;
+                        p.DeactivateUI();
+                    }
                     Timer = 5f;
                 }
                 break;
@@ -71,7 +81,6 @@ public class BoomerangGameplay : MonoBehaviour
                 if (Timer <= 0)
                 {
                     GameState = State.END;
-                    PlayerScript.ThrowPhase = false;
                     Timer = 2f;
                 }
                 break;
