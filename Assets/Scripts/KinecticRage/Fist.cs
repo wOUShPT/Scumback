@@ -6,15 +6,18 @@ public class Fist : MonoBehaviour
 {
     public Enemy enemy;
     public Collider2D thisCol;
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private void Start()
     {
-        if (enemy.attackHit == false)
-        {
-            if (collision.CompareTag("Player"))
+        thisCol = GetComponent<Collider2D>();
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+            if (collision.CompareTag("Player") == true)
             {
-                thisCol.enabled = false;
+                Debug.Log("ai");
                 enemy.attackHit = true;
+                thisCol.enabled = false;
             }
-        }
     }
 }
