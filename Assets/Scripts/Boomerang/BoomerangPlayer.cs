@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class BoomerangPlayer : MonoBehaviour
 {
@@ -19,7 +20,8 @@ public class BoomerangPlayer : MonoBehaviour
     
     private List<PlayerInputController> _playersControllers;
     public int PlayerID;
-    
+    public Sprite ThrownSprite;
+    bool UIActivated = false;
 
     void Start()
     {
@@ -43,6 +45,12 @@ public class BoomerangPlayer : MonoBehaviour
     {
         if (!Thrown && ThrowPhase)
         {
+            if (!UIActivated)
+            {
+                transform.GetChild(0).gameObject.SetActive(true);
+                UIActivated = true;
+            }
+
             if (direction)
             {
                 myAngle += Time.deltaTime * ThrowRotationSpeed;
@@ -69,6 +77,7 @@ public class BoomerangPlayer : MonoBehaviour
                 ThrowBoomerang();
             }
         }*/
+        
     }
 
     //public void ThrowBoomerangEvent(InputAction.CallbackContext ctx) => ThrowBoomerang();
@@ -81,6 +90,7 @@ public class BoomerangPlayer : MonoBehaviour
             Debug.Log("Throw Registered");
             GameObject go = Instantiate(Boomerang,transform.parent);
             go.GetComponent<BoomerangLogic>().Direction = transform.right;
+            transform.parent.GetComponent<Image>().sprite = ThrownSprite;
             switch (PlayerID)
             {
                 case 0:
@@ -92,6 +102,11 @@ public class BoomerangPlayer : MonoBehaviour
             }
             //GameObject go = Instantiate();
         }
+    }
+
+    public void DeactivateUI()
+    {
+        transform.GetChild(0).gameObject.SetActive(false);
     }
     
 }

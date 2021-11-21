@@ -68,7 +68,10 @@ public class BoomerangGameplay : MonoBehaviour
                 {
                     GameState = State.RETURN;
                     foreach (BoomerangPlayer p in PlayerScript)
+                    {
                         p.ThrowPhase = false;
+                        p.DeactivateUI();
+                    }
                     Timer = 5f;
                 }
                 break;
@@ -78,8 +81,6 @@ public class BoomerangGameplay : MonoBehaviour
                 if (Timer <= 0)
                 {
                     GameState = State.END;
-                    foreach (BoomerangPlayer p in PlayerScript)
-                        p.ThrowPhase = false;
                     Timer = 2f;
                 }
                 break;
