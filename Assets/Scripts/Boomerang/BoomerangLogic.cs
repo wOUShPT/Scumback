@@ -13,6 +13,7 @@ public class BoomerangLogic : MonoBehaviour
     public bool HasLoot = false;
     public bool HitABoomerang = false;
     public List<Sprite> LootList;
+    public float PlayerThrowID;
     // Start is called before the first frame update
     void Start()
     {

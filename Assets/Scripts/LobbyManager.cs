@@ -44,7 +44,7 @@ public class LobbyManager : MonoBehaviour
             counter -= Time.deltaTime;
             if (counter <= 0)
             {
-                SceneManager.LoadScene("KinecticRage");
+                SceneManager.LoadScene("Boomerang");
             }
         }
     }
