@@ -12,6 +12,8 @@ public class LevelManager : MonoBehaviour
     public float player2HP;
 
     public float decreaseP2HpValue;
+    public SpriteRenderer enemySpriteRenderer;
+    public SpriteRenderer playerSpriteRenderer;
 
     public Slider enemySlider;
     public TMPro.TMP_Text player1ScoreTxt;
@@ -29,7 +31,10 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
-        gameTimer -= Time.deltaTime;
+        if (gameHasStarted == true)
+        {
+            gameTimer -= Time.deltaTime;
+        }
         enemySlider.value = player2HP;
         player1ScoreTxt.text = player1Score.ToString();
         gameTimerTxt.text = Mathf.RoundToInt(gameTimer).ToString();
@@ -48,15 +53,31 @@ public class LevelManager : MonoBehaviour
 
         if (player1Score >= 20 || player2HP <= 0)
         {
-            gameHasStarted = false;
             Debug.Log("Player1Wins");
 
             //if time runs out player2wins
+            StartCoroutine(Player1Wins());
         }
         else if (gameTimer <= 0)
         {
-            gameHasStarted = false;
             Debug.Log("Player2Wins");
-        }    
+            StartCoroutine(Player2Wins());
+        }
+
+        IEnumerator Player1Wins()
+        {
+            yield return new WaitForSeconds(1);
+            enemySpriteRenderer.sprite = Resources.Load<Sprite>("Sprites/Fight/skeletal");
+            yield return new WaitForSeconds(1);
+            enemySpriteRenderer.sprite = Resources.Load<Sprite>("Sprites/Fight/Smoke");
+            gameHasStarted = false;
+            yield break;
+        }
+        IEnumerator Player2Wins()
+        {
+            gameHasStarted = false;
+            //logica de ponto PLAYER 2
+            yield break;
+        }
     }
 }

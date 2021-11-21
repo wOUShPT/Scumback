@@ -282,6 +282,8 @@ MonoBehaviour:
   player1Score: 0
   player2HP: 100
   decreaseP2HpValue: 3
+  enemySpriteRenderer: {fileID: 1841363201}
+  playerSpriteRenderer: {fileID: 1924328076}
   enemySlider: {fileID: 735649376}
   player1ScoreTxt: {fileID: 370246241}
   gameTimerTxt: {fileID: 1894502578}
