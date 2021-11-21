@@ -109,7 +109,7 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 90e715e3-b144-4806-acfd-98195bea7e22
     m_ActionName: Player/HorizontalMovement[/DualShock4GamepadHID/leftStick/left,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/left,/DualShock4GamepadHID/leftStick/right,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right,/DualShock4GamepadHID/dpad/left,/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/left,/DualShock4GamepadHID/dpad/right,/XInputControllerWindows/dpad/right,/XInputControllerWindows/dpad/right,/XInputControllerWindows/dpad/right,/XInputControllerWindows/dpad/right]
-  m_NeverAutoSwitchControlSchemes: 0
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
