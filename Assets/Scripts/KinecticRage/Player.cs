@@ -10,11 +10,12 @@ public class Player : MonoBehaviour
     public GameObject leftPos;
     public GameObject centerPos;
     public GameObject rightPos;
-    public bool keyPressed;
+
+    public Enemy enemy;
+
+    public Vector3 originalPos;
 
     private List<PlayerInputController> _playersControllers;
-    public PlayerInput playerInput;
-    public float horizontalMovement;
     
     void Start()
     {
@@ -23,60 +24,38 @@ public class Player : MonoBehaviour
         {
             Debug.Log(player.PlayerIndex);
         }
-        keyPressed = false;
+
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
 
-        playerInput = gameObject.GetComponent<PlayerInput>();
-        
+        originalPos = gameObject.transform.position;
     }
 
     void Update()
     {
-        if (levelManager.gameHasStarted)
+        if (levelManager.gameHasStarted && enemy.attackHit == false)
         {
             foreach (var playerController in _playersControllers)
             {
-                if (playerController.input.horizontalMovement == 0)
+                if (playerController.PlayerIndex == 0)
                 {
-                    Debug.Log(playerController.input.horizontalMovement);
-                    keyPressed = true;
-                    //gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, leftPos.transform.position, Time.deltaTime * 5);
-                }
-                else if (playerController.input.horizontalMovement == 1)
-                {
-                    Debug.Log(playerController.input.horizontalMovement);
-                    keyPressed = true;
-                    //gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, leftPos.transform.position, Time.deltaTime * 5);
+                    if (playerController.input.horizontalMovement == -1)
+                    {
+                        if (gameObject.transform.position.x >= -3)
+                        {
+                            gameObject.transform.position = leftPos.transform.position;
+                        }
+
+                    }
+                    else if (playerController.input.horizontalMovement == 1)
+                    {
+                        gameObject.transform.position = rightPos.transform.position;
+                    }
+                    else if (playerController.input.horizontalMovement == 0)
+                    {
+                        gameObject.transform.position = originalPos;
+                    }
                 }
             }
-            
-            //if (keyPressed = false)
-            //{
-            //    gameObject.transform.position = centerPos.transform.position;
-            //}
-            //if ()
-            //{
-            //    keyPressed = true;
-            //    gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, leftPos.transform.position, Time.deltaTime * 5);
-            //}
-            //else
-            //{
-            //    keyPressed = false;
-            //}
-            //if (Input.GetButtonDown("d"))
-            //{
-            //    keyPressed = true;
-
-            //}
-            //else
-            //{
-            //    keyPressed = false;
-            //    gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, rightPos.transform.position, Time.deltaTime * 5);
-            //}
         }
-
-
-    }
-
-    
+    } 
 }

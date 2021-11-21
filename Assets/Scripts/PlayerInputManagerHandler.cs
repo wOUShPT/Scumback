@@ -11,11 +11,11 @@ public class PlayerInputManagerHandler : MonoBehaviour
     private PlayerInput inputDummy;
     private List<Gamepad> gamepads;
 
-    public void StartGame()
-    {
-        if (PlayerInputManager.instance.playerCount == 2)
-        {
-            SceneManager.LoadScene("Boomerang");
-        }
-    }
+    //public void StartGame()
+    //{
+    //    if (PlayerInputManager.instance.playerCount == 2)
+    //    {
+    //        SceneManager.LoadScene("KinecticRage");
+    //    }
+    //}
 }
