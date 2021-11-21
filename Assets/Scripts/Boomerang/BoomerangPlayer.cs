@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,9 +16,14 @@ public class BoomerangPlayer : MonoBehaviour
     public float ThrowRotationSpeed;
 
     public GameObject Boomerang;
+    
+    private List<PlayerInputController> _playersControllers;
+    
 
     void Start()
     {
+        _playersControllers = FindObjectsOfType<PlayerInputController>().ToList();
+
         if (Random.value > 0.5f)
         {
             myAngle = Random.Range(0, Angles);
@@ -47,9 +53,17 @@ public class BoomerangPlayer : MonoBehaviour
             Mathf.Clamp(myAngle, -Angles, Angles);
             transform.rotation = Quaternion.Euler(0, 0, myAngle);
         }
+
+        foreach (var playerController in _playersControllers)
+        {
+            if (playerController.input.action > 0)
+            {
+                ThrowBoomerang();
+            }
+        }
     }
 
-    public void ThrowBoomerangEvent(InputAction.CallbackContext ctx) => ThrowBoomerang();
+    //public void ThrowBoomerangEvent(InputAction.CallbackContext ctx) => ThrowBoomerang();
 
     public void ThrowBoomerang()
     {
