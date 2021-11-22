@@ -73,6 +73,7 @@ public class BoatController : MonoBehaviour
 
     private FMOD.Studio.EventInstance rugido;
     private FMOD.Studio.EventInstance splash;
+    private FMOD.Studio.EventInstance ambience;
 
     private void Start()
     {
@@ -102,6 +103,8 @@ public class BoatController : MonoBehaviour
 
         rugido = FMODUnity.RuntimeManager.CreateInstance("event:/Jogo do barco/Rugido");
         splash = FMODUnity.RuntimeManager.CreateInstance("event:/Jogo do barco/Splash mãos");
+        ambience = FMODUnity.RuntimeManager.CreateInstance("event:/Jogo do barco/Ambiência mar");
+        ambience.start();
     }
 
     void Update()
@@ -146,6 +149,7 @@ public class BoatController : MonoBehaviour
                     _currentPosition.x += speed * Time.deltaTime;
                     _player2LastActionTime = Time.time;
                     _player2Animator.SetTrigger("Action");
+                    splash.start();
                 }
                 else if (playerController.input.action == 0 && playerController.PlayerIndex == 1)
                 {
@@ -283,7 +287,6 @@ public class BoatController : MonoBehaviour
 
     IEnumerator DeathAnimation()
     {
-        
         if (isPlayer1Dead)
         {
             yield return new WaitForSeconds(1f);
@@ -293,9 +296,10 @@ public class BoatController : MonoBehaviour
             yield return new WaitForSeconds(2f);
             _player1Animator.SetBool("Die", true);
             croco1.localPosition = new Vector3(croco1.localPosition.x, -1f, croco1.localPosition.z);
+            _scoreScript.player2Score++;
         }
 
-        if (isPlayer2Dead)
+        else if (isPlayer2Dead)
         {
             yield return new WaitForSeconds(1f);
             _warning2.alpha = 0;
@@ -304,6 +308,19 @@ public class BoatController : MonoBehaviour
             yield return new WaitForSeconds(2f);
             _player2Animator.SetBool("Die", true);
             croco2.localPosition = new Vector3(croco2.localPosition.x, -1f, croco2.localPosition.z);
+            _scoreScript.player1Score++;
+        }
+        else
+        {
+            if (boatTransform.position.x < 0)
+            {
+                _scoreScript.player1Score++;
+            }
+
+            if (boatTransform.position.x > 0)
+            {
+                _scoreScript.player2Score++;
+            }
         }
 
         if (_timer <= 0)
@@ -315,16 +332,6 @@ public class BoatController : MonoBehaviour
             gameOverText.enabled = true;
         }
 
-        if (boatTransform.position.x < 0)
-        {
-            Debug.Log(_scoreScript);
-            _scoreScript.player1Score++;
-        }
-
-        if (boatTransform.position.x > 0)
-        {
-            _scoreScript.player2Score++;
-        }
         SceneManager.LoadScene("Score");
         yield return null;
     }

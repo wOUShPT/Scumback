@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BoomerangGameplay : MonoBehaviour
 {
@@ -17,6 +19,10 @@ public class BoomerangGameplay : MonoBehaviour
     public float GameTime = 5f;
     private float Timer;
 
+    public int resetCounter;
+
+    private GamesManager _gamesManager;
+
     enum State
     {
         START,
@@ -29,6 +35,8 @@ public class BoomerangGameplay : MonoBehaviour
     
     void Start()
     {
+        resetCounter = 0;
+        _gamesManager = FindObjectOfType<GamesManager>();
         //PlayerScript = Player.GetComponent<BoomerangPlayer>();
 
         foreach(BoomerangPlayer ps in PlayerScript)
@@ -64,7 +72,7 @@ public class BoomerangGameplay : MonoBehaviour
             case State.AIM:
                 Debug.Log("AIM Time");
                 Timer -= Time.deltaTime;
-                if (Timer <= 0)
+                if (Timer <= 0 || resetCounter >= 2f)
                 {
                     GameState = State.RETURN;
                     foreach (BoomerangPlayer p in PlayerScript)
@@ -72,7 +80,7 @@ public class BoomerangGameplay : MonoBehaviour
                         p.ThrowPhase = false;
                         p.DeactivateUI();
                     }
-                    Timer = 5f;
+                    Timer = 3f;
                 }
                 break;
             case State.RETURN:
@@ -81,11 +89,11 @@ public class BoomerangGameplay : MonoBehaviour
                 if (Timer <= 0)
                 {
                     GameState = State.END;
-                    Timer = 2f;
                 }
                 break;
             case State.END:
                 //Game End
+                SceneManager.LoadScene("Score");
                 Debug.Log("Game is Over");
                 break;
             default:

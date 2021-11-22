@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
@@ -11,6 +12,8 @@ public class LevelManager : MonoBehaviour
     public int player1Score;
     public float player2HP;
 
+    public int condition;
+
     public float decreaseP2HpValue;
     public SpriteRenderer enemySpriteRenderer;
     public SpriteRenderer playerSpriteRenderer;
@@ -18,6 +21,10 @@ public class LevelManager : MonoBehaviour
     public Slider enemySlider;
     public TMPro.TMP_Text player1ScoreTxt;
     public TMPro.TMP_Text gameTimerTxt;
+
+    private FMOD.Studio.EventInstance puff;
+    
+    private Score _scoreScript;
 
     private void Start()
     {
@@ -27,6 +34,12 @@ public class LevelManager : MonoBehaviour
 
         enemySlider.maxValue = 100;
         enemySlider.minValue = 0;
+
+        condition = 0;
+        
+        _scoreScript = FindObjectOfType<Score>();
+        
+        puff = FMODUnity.RuntimeManager.CreateInstance("event:/Jogo da porrada/Puff");
     }
 
     private void Update()
@@ -53,30 +66,55 @@ public class LevelManager : MonoBehaviour
 
         if (player1Score >= 20 || player2HP <= 0)
         {
+            condition = 1;
             Debug.Log("Player1Wins");
-
             //if time runs out player2wins
             StartCoroutine(Player1Wins());
         }
         else if (gameTimer <= 0)
         {
+            condition = 1;
             Debug.Log("Player2Wins");
             StartCoroutine(Player2Wins());
         }
 
+        if (player2HP <= 0)
+        {
+            condition = 2;
+        }
+
         IEnumerator Player1Wins()
         {
-            yield return new WaitForSeconds(1);
-            enemySpriteRenderer.sprite = Resources.Load<Sprite>("Sprites/Fight/skeletal");
-            yield return new WaitForSeconds(1);
-            enemySpriteRenderer.sprite = Resources.Load<Sprite>("Sprites/Fight/Smoke");
+            if (condition == 1)
+            {
+                yield return new WaitForSeconds(1);
+                playerSpriteRenderer.sprite = Resources.Load<Sprite>("Sprites/Fight/Punching");
+                yield return new WaitForSeconds(1);
+                enemySpriteRenderer.sprite = Resources.Load<Sprite>("Sprites/Fight/BullyKO");
+            }
+            if (condition == 2)
+            {
+                yield return new WaitForSeconds(1);
+                enemySpriteRenderer.sprite = Resources.Load<Sprite>("Sprites/Fight/skeletal");
+                yield return new WaitForSeconds(1);
+                puff.start();
+                enemySpriteRenderer.sprite = Resources.Load<Sprite>("Sprites/Fight/Smoke");
+            }
+            
             gameHasStarted = false;
-            yield break;
+            _scoreScript.player1Score++;
+            SceneManager.LoadScene("Final");
         }
         IEnumerator Player2Wins()
         {
             gameHasStarted = false;
+            enemySpriteRenderer.sprite = Resources.Load<Sprite>("Sprites/Fight/RaiseWin");
+            yield return new WaitForSeconds(1);
+            playerSpriteRenderer.sprite = Resources.Load<Sprite>("Sprites/Fight/Defeat");
+            yield return new WaitForSeconds(2);
             //logica de ponto PLAYER 2
+            _scoreScript.player2Score++;
+            SceneManager.LoadScene("Final");
             yield break;
         }
     }

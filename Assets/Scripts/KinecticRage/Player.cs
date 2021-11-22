@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     public Vector3 originalPos;
 
     private List<PlayerInputController> _playersControllers;
-    
+
     void Start()
     {
         _playersControllers = FindObjectsOfType<PlayerInputController>().ToList();

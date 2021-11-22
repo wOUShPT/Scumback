@@ -31,6 +31,11 @@ public class Enemy : MonoBehaviour
     public SpriteRenderer spriteR;
     public SpriteRenderer playerSpriteR;
 
+    private FMOD.Studio.EventInstance punch;
+    private FMOD.Studio.EventInstance pain;
+    
+    
+
     void Start()
     {
         _playersControllers = FindObjectsOfType<PlayerInputController>().ToList();
@@ -40,6 +45,9 @@ public class Enemy : MonoBehaviour
         isAttacking = false;
         attackHit = false;
         canAttackSprite.SetActive(false);
+
+        punch = FMODUnity.RuntimeManager.CreateInstance("event:/Jogo da porrada/Punch");
+        pain = FMODUnity.RuntimeManager.CreateInstance("event:/Jogo da porrada/Dor char A");
     }
 
     void Update()
@@ -88,6 +96,8 @@ public class Enemy : MonoBehaviour
         if (player.pos == 0)
         {
             player.canMove = false;
+            punch.start();
+            pain.start();
             playerSpriteR.sprite = Resources.Load<Sprite>("Sprites/Fight/R_Punched");
             yield return new WaitForSeconds(0.5f);
             spriteR.sprite = Resources.Load<Sprite>("Sprites/Fight/Bully");
@@ -104,6 +114,7 @@ public class Enemy : MonoBehaviour
         {
             yield return new WaitForSeconds(0.5f);
             spriteR.sprite = Resources.Load<Sprite>("Sprites/Fight/Bully");
+            levelManager.player2HP += 5;
             leftFistCol.enabled = false;
             isAttacking = false;
             yield return attackTimer = 0;
@@ -124,6 +135,8 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("punched");
             player.canMove = false;
+            punch.start();
+            pain.start();
             playerSpriteR.sprite = Resources.Load<Sprite>("Sprites/Fight/Punched");
             yield return new WaitForSeconds(0.5f);
             spriteR.sprite = Resources.Load<Sprite>("Sprites/Fight/Bully");

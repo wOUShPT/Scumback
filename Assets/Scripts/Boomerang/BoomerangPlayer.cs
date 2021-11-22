@@ -22,6 +22,9 @@ public class BoomerangPlayer : MonoBehaviour
     public int PlayerID;
     public Sprite ThrownSprite;
     bool UIActivated = false;
+    
+    private FMOD.Studio.EventInstance throwSound;
+    private FMOD.Studio.EventInstance flightSound;
 
     void Start()
     {
@@ -39,6 +42,9 @@ public class BoomerangPlayer : MonoBehaviour
             myAngle = Random.Range(0, -Angles);
             direction = true;
         }
+
+        throwSound = FMODUnity.RuntimeManager.CreateInstance("event:/Jogo do bumerangue/Bumerangue throw");
+        flightSound = FMODUnity.RuntimeManager.CreateInstance("event:/Jogo do bumerangue/Bumerangue flight");
     }
 
     void Update()
@@ -68,6 +74,8 @@ public class BoomerangPlayer : MonoBehaviour
         if (_playersControllers[PlayerID].input.action > 0)
         {
             ThrowBoomerang();
+            throwSound.start();
+            flightSound.start();
         }
         /*
         foreach (var playerController in _playersControllers)
@@ -87,6 +95,7 @@ public class BoomerangPlayer : MonoBehaviour
         if (!Thrown && ThrowPhase)
         {
             Thrown = true;
+            
             Debug.Log("Throw Registered");
             GameObject go = Instantiate(Boomerang,transform.parent);
             go.GetComponent<BoomerangLogic>().Direction = transform.right;

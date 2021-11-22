@@ -25,6 +25,8 @@ public class ScoreScreen : MonoBehaviour
         _player1Score.text = _scoreScript.lastPlayer1Score.ToString();
         _player2Score.text = _scoreScript.lastPlayer2Score.ToString();
         yield return new WaitForSeconds(2f);
+        _scoreScript.lastPlayer1Score = _scoreScript.player1Score;
+        _scoreScript.lastPlayer2Score = _scoreScript.player2Score;
         _player1Score.text = _scoreScript.player1Score.ToString();
         _player2Score.text = _scoreScript.player2Score.ToString();
         yield return new WaitForSeconds(3f);
