@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: {x: 0, y: 0, z: 0}
-  BoomerangSpeed: 15
+  BoomerangSpeed: 1500
   BoomerangTimer: 1.25
   HitAWall: 0
   returning: 1
@@ -129,6 +129,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 110c493a7ed21744d862c7896819d1d9, type: 3}
   - {fileID: 21300000, guid: 9ba276b7839d06b46b0bd1cfbbd501b0, type: 3}
   - {fileID: 21300000, guid: af1165de11774ab458d34715857fad35, type: 3}
+  PlayerThrowID: 0
 --- !u!95 &5062930278382722069
 Animator:
   serializedVersion: 3

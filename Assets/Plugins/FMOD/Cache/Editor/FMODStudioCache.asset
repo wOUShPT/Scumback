@@ -107,7 +107,7 @@ MonoBehaviour:
   Path: ../INVICTVSGameJam21FMOD/INVICTVSGameJam21/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637730881039190483
+  lastModified: 637732044516169431
   FileSizes:
   - Name: Desktop
     Value: 3286656
@@ -404,7 +404,7 @@ MonoBehaviour:
   - {fileID: -7770372124642677106}
   StringsBanks:
   - {fileID: 2597052220311487340}
-  stringsBankWriteTime: 637730815895037864
+  stringsBankWriteTime: 637732044516179433
   cacheVersion: 8
 --- !u!114 &607868713035141442
 MonoBehaviour:
@@ -490,7 +490,7 @@ MonoBehaviour:
   Path: ../INVICTVSGameJam21FMOD/INVICTVSGameJam21/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637730815895037864
+  lastModified: 637732044516179433
   FileSizes:
   - Name: Desktop
     Value: 2076

@@ -11,6 +11,8 @@ public class LobbyManager : MonoBehaviour
 {
     public GameObject controller1;
     public GameObject controller2;
+    public GameObject player1Text;
+    public GameObject player2Text;
     public GameObject controller1Text;
     public GameObject controller2Text;
     public TextMeshProUGUI readyText;
@@ -35,18 +37,24 @@ public class LobbyManager : MonoBehaviour
             case 0:
                 controller1.SetActive(false);
                 controller2.SetActive(false);
+                player1Text.SetActive(false);
+                player2Text.SetActive(false);
                 controller1Text.SetActive(true);
                 controller2Text.SetActive(true);
                 break;
             case 1:
                 controller1.SetActive(true);
-                controller1Text.SetActive(false);
                 controller2.SetActive(false);
+                player1Text.SetActive(true);
+                player2Text.SetActive(false);
+                controller1Text.SetActive(false);
                 controller2Text.SetActive(true);
                 break;
             case 2:
                 controller1.SetActive(true);
                 controller2.SetActive(true);
+                player1Text.SetActive(true);
+                player2Text.SetActive(true);
                 controller1Text.SetActive(false);
                 controller2Text.SetActive(false);
                 break;

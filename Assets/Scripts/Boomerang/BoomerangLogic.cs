@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BoomerangLogic : MonoBehaviour
 {
     public Vector3 Direction;
-    public float BoomerangSpeed = 25f;
+    public float BoomerangSpeed = 40f;
     public float BoomerangTimer = 1.25f;
     public bool HitAWall = false;
     public bool returning = false;
@@ -31,7 +32,7 @@ public class BoomerangLogic : MonoBehaviour
     {
         if (HitABoomerang)
         {
-            this.transform.position -= (Vector3.up) * BoomerangSpeed;
+            this.transform.position -= (Vector3.up) * (BoomerangSpeed * Time.deltaTime);
             return;
         }
 
@@ -44,13 +45,13 @@ public class BoomerangLogic : MonoBehaviour
 
         if (BoomerangTimer >= 0)
         {
-            this.transform.position += Direction * BoomerangSpeed;
+            this.transform.position += Direction * (BoomerangSpeed * Time.deltaTime);
             BoomerangTimer -= Time.deltaTime;
         }
         else
         {
             if (!returning) returning = true;
-            this.transform.position -= Direction * BoomerangSpeed;
+            this.transform.position -= Direction * (BoomerangSpeed * Time.deltaTime);
         }
 
 
