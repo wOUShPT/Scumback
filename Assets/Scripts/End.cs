@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,7 +12,16 @@ public class End : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _winnerText;
     private Score _scoreScript;
-    // Start is called before the first frame update
+
+    private GamesManager _gamesManager;
+
+    private void Awake()
+    {
+        _gamesManager = FindObjectOfType<GamesManager>();
+        
+        _gamesManager.StopAllSnapShots();
+    }
+
     IEnumerator Start()
     {
         _scoreScript = FindObjectOfType<Score>();
@@ -27,7 +38,13 @@ public class End : MonoBehaviour
             _winnerText.text = "It's a Draw";
         }
         yield return new WaitForSeconds(5f);
-        Application.Quit();
+        List<PlayerInput> _playerInputs = FindObjectsOfType<PlayerInput>().ToList();
+        for (int i = 0; i < _playerInputs.Count; i++)
+        {
+            Destroy(_playerInputs[i].gameObject);
+        }
+        Destroy(_gamesManager.gameObject);
+        SceneManager.LoadScene("Lobby");
     }
     
 }

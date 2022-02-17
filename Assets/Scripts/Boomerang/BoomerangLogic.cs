@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Timers;
+using FMOD.Studio;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class BoomerangLogic : MonoBehaviour
 {
@@ -17,7 +20,7 @@ public class BoomerangLogic : MonoBehaviour
     public float PlayerThrowID;
     
     private BoomerangGameplay _boomerangGameplay;
-
+    
     private FMOD.Studio.EventInstance avo;
     // Start is called before the first frame update
     void Start()
@@ -25,6 +28,11 @@ public class BoomerangLogic : MonoBehaviour
         returning = false;
         _boomerangGameplay = FindObjectOfType<BoomerangGameplay>();
         avo = FMODUnity.RuntimeManager.CreateInstance("event:/Jogo do bumerangue/Avó");
+    }
+
+    private void OnDisable()
+    {
+        avo.stop(STOP_MODE.IMMEDIATE);
     }
 
     // Update is called once per frame

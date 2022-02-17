@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using FMOD.Studio;
@@ -6,7 +7,13 @@ using UnityEngine.SceneManagement;
 
 public class TitleSceen : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private EventInstance _music;
+
+    private void Awake()
+    {
+        
+    }
+
     IEnumerator Start()
     {
         yield return new WaitForSeconds(4f);

@@ -17,11 +17,12 @@ public class ScoreScreen : MonoBehaviour
     {
         _gamesManager = FindObjectOfType<GamesManager>();
         _scoreScript = FindObjectOfType<Score>();
+        _gamesManager.StopAllSnapShots();
+        StartCoroutine(UpdateScore());
     }
 
-    IEnumerator Start()
+    IEnumerator UpdateScore()
     {
-        _scoreScript = FindObjectOfType<Score>();
         _player1Score.text = _scoreScript.lastPlayer1Score.ToString();
         _player2Score.text = _scoreScript.lastPlayer2Score.ToString();
         yield return new WaitForSeconds(2f);
@@ -31,11 +32,6 @@ public class ScoreScreen : MonoBehaviour
         _player2Score.text = _scoreScript.player2Score.ToString();
         yield return new WaitForSeconds(3f);
         _gamesManager.currentLevel++;
-        foreach (var snapshot in _gamesManager.snapshots)
-        {
-            snapshot.stop(STOP_MODE.IMMEDIATE);
-        }
-        _gamesManager.snapshots[_gamesManager.currentLevel].start();
         SceneManager.LoadScene(_gamesManager.levels[_gamesManager.currentLevel]);
     }
 

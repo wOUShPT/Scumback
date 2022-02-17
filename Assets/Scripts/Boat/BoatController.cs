@@ -71,9 +71,12 @@ public class BoatController : MonoBehaviour
 
     private Score _scoreScript;
 
-    private FMOD.Studio.EventInstance rugido;
-    private FMOD.Studio.EventInstance splash;
-    private FMOD.Studio.EventInstance ambience;
+    private GamesManager _gamesManager;
+
+    private FMOD.Studio.EventInstance _music;
+    private FMOD.Studio.EventInstance _rugido;
+    private FMOD.Studio.EventInstance _splash;
+    private FMOD.Studio.EventInstance _ambience;
 
     private void Start()
     {
@@ -101,10 +104,23 @@ public class BoatController : MonoBehaviour
         StartCoroutine(SetChances());
         _scoreScript = FindObjectOfType<Score>();
 
-        rugido = FMODUnity.RuntimeManager.CreateInstance("event:/Jogo do barco/Rugido");
-        splash = FMODUnity.RuntimeManager.CreateInstance("event:/Jogo do barco/Splash mãos");
-        ambience = FMODUnity.RuntimeManager.CreateInstance("event:/Jogo do barco/Ambiência mar");
-        ambience.start();
+        _gamesManager = FindObjectOfType<GamesManager>();
+        _gamesManager.StopAllSnapShots();
+        _gamesManager.snapshots[_gamesManager.currentLevel].start();
+        _music = FMODUnity.RuntimeManager.CreateInstance("event:/Música/Barco song");
+        _rugido = FMODUnity.RuntimeManager.CreateInstance("event:/Jogo do barco/Rugido");
+        _splash = FMODUnity.RuntimeManager.CreateInstance("event:/Jogo do barco/Splash mãos");
+        _ambience = FMODUnity.RuntimeManager.CreateInstance("event:/Jogo do barco/Ambiência mar");
+        _music.start();
+        _ambience.start();
+    }
+    
+    private void OnDisable()
+    {
+        _music.stop(STOP_MODE.IMMEDIATE);
+        _ambience.stop(STOP_MODE.IMMEDIATE);
+        _rugido.stop(STOP_MODE.IMMEDIATE);
+        _splash.stop(STOP_MODE.IMMEDIATE);
     }
 
     void Update()
@@ -128,7 +144,7 @@ public class BoatController : MonoBehaviour
                     _currentPosition.x -= speed * Time.deltaTime;
                     _player1LastActionTime = Time.time;
                     _player1Animator.SetTrigger("Action");
-                    splash.start();
+                    _splash.start();
                 }
                 else if (playerController.input.action == 0 && playerController.PlayerIndex == 0)
                 {
@@ -149,7 +165,7 @@ public class BoatController : MonoBehaviour
                     _currentPosition.x += speed * Time.deltaTime;
                     _player2LastActionTime = Time.time;
                     _player2Animator.SetTrigger("Action");
-                    splash.start();
+                    _splash.start();
                 }
                 else if (playerController.input.action == 0 && playerController.PlayerIndex == 1)
                 {
@@ -276,8 +292,7 @@ public class BoatController : MonoBehaviour
         {
             if (isPlayer1Dead || isPlayer2Dead)
             {
-                splash.stop(STOP_MODE.IMMEDIATE);
-                rugido.start();
+                _rugido.start();
             }
             StartCoroutine(DeathAnimation());
             Debug.Log("Gameover");

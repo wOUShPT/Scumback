@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000028CFECC5858 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000026395650748 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -18,36 +18,47 @@
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[LOG] SoundI::release                          :  (0000028C0E58E318)
-[LOG] SoundI::release                          :     Rugido 2 (0000028C0D3534A8)
-[LOG] SoundI::release                          : Ambiência mar (0000028CD35AC0B8)
-[LOG] SoundI::release                          :     Ambiência mar (0000028C0E52C258)
-[LOG] SoundI::release                          :     Ambiência mar (0000028D28AB02E8)
-[LOG] SoundI::release                          : Barco song (0000028CD35AC778)
-[LOG] SoundI::release                          :     Barco song (0000028C0E52C598)
-[LOG] SoundI::release                          :     Barco song (0000028D28AB0138)
-[LOG] SoundI::release                          :  (0000028CF98CB0C8)
-[LOG] SoundI::release                          :     Splash mãos  (1) (0000028C0D3515C8)
-[LOG] SoundI::release                          :  (0000028C0E58EA48)
-[LOG] SoundI::release                          :     Splash mãos  (2) (0000028C0D351428)
-[LOG] SoundI::release                          :  (0000028C0E58DEC8)
-[LOG] SoundI::release                          :     Splash mãos  (3) (0000028C0D351DE8)
-[LOG] SoundI::release                          :  (0000028C0E58E768)
-[LOG] SoundI::release                          :     Splash mãos  (4) (0000028C0D353CC8)
-[LOG] SoundI::release                          :  (0000028CF98CB3A8)
-[LOG] SoundI::release                          :     Splash mãos  (5) (0000028C0D351288)
-[LOG] SoundI::release                          :  (0000028C0E58E488)
-[LOG] SoundI::release                          :     Splash mãos  (6) (0000028C0D3510E8)
-[LOG] SoundI::release                          :  (0000028C0E58E5F8)
-[LOG] SoundI::release                          :     Splash mãos  (7) (0000028C0D353168)
-[LOG] SoundI::release                          :  (0000028CF98CB238)
-[LOG] SoundI::release                          :     Amb gaivota 3 (0000028C0D351C48)
-[LOG] SoundI::release                          :  (0000028C0E58E038)
-[LOG] SoundI::release                          :     Amb gaivota 4 (0000028C0D353308)
-[LOG] SoundI::release                          :  (0000028C0E58E1A8)
-[LOG] SoundI::release                          :     Amb gaivota 1 (0000028C0D353988)
-[LOG] SoundI::release                          :  (0000028C0E58EBB8)
-[LOG] SoundI::release                          :     Amb gaivota 2 (0000028C0D351768)
+[LOG] SystemI::createSound                     : filename = ../INVICTVSGameJam21FMOD/INVICTVSGameJam21/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000262B4BDC268 : node = 000002635FBD60E0
+[LOG] SystemI::createSound                     : add node to async list : head = 000002628FD76C38.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000262B4BDC268
+[LOG] SystemI::createSoundInternal             :     Create name='../INVICTVSGameJam21FMOD/INVICTVSGameJam21/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3242848
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 43808
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002635FBD61F0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Main menu', format=5, channels=2, frequency=48000, lengthbytes=395136, lengthpcm=1355790, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.643181.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000262B4BDC268
+[LOG] SoundI::release                          : Main menu (00000262B4BEA638)
+[LOG] SoundI::release                          :     Main menu (00000263382EEFC8)
+[LOG] SoundI::release                          :     Main menu (00000262B4BDF508)
+[LOG] SystemI::createSound                     : filename = ../INVICTVSGameJam21FMOD/INVICTVSGameJam21/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000262B4BEA488 : node = 000002635FBD6860
+[LOG] SystemI::createSound                     : add node to async list : head = 000002628FD76C38.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000262B4BEA488
+[LOG] SystemI::createSoundInternal             :     Create name='../INVICTVSGameJam21FMOD/INVICTVSGameJam21/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3242848
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 43808
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002635FBD6970
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Main menu', format=5, channels=2, frequency=48000, lengthbytes=395136, lengthpcm=1355790, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.643181.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000262B4BEA488
+[LOG] SoundI::release                          : Main menu (00000262B4BDC268)
+[LOG] SoundI::release                          :     Main menu (000002628C6AE7B8)
+[LOG] SoundI::release                          :     Main menu (00000262B4BDC418)
+[LOG] SoundI::release                          : Main menu (00000262B4BEA488)
+[LOG] SoundI::release                          :     Main menu (000002628C6B0018)
+[LOG] SoundI::release                          :     Main menu (00000262B4BEA638)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients

@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEditor.Experimental;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -23,6 +25,8 @@ public class BoomerangGameplay : MonoBehaviour
 
     private GamesManager _gamesManager;
 
+    private EventInstance _music;
+
     enum State
     {
         START,
@@ -32,7 +36,17 @@ public class BoomerangGameplay : MonoBehaviour
     }
 
     private State GameState;
-    
+
+    private void Awake()
+    {
+        _gamesManager = FindObjectOfType<GamesManager>();
+        _gamesManager.StopAllSnapShots();
+        Debug.Log(_gamesManager.levels[_gamesManager.currentLevel]);
+        _gamesManager.snapshots[_gamesManager.currentLevel].start();
+        _music = FMODUnity.RuntimeManager.CreateInstance("event:/Música/Bumerangue song");
+        _music.start();
+    }
+
     void Start()
     {
         resetCounter = 0;
@@ -46,6 +60,11 @@ public class BoomerangGameplay : MonoBehaviour
         }
         GameState = State.START;
         Timer = StarTime;
+    }
+
+    private void OnDisable()
+    {
+        _music.stop(STOP_MODE.IMMEDIATE);
     }
 
     // Update is called once per frame

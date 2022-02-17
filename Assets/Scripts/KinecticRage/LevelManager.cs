@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Resources;
+using FMOD.Studio;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -22,9 +25,23 @@ public class LevelManager : MonoBehaviour
     public TMPro.TMP_Text player1ScoreTxt;
     public TMPro.TMP_Text gameTimerTxt;
 
-    private FMOD.Studio.EventInstance puff;
+    private FMOD.Studio.EventInstance _music;
+    private FMOD.Studio.EventInstance _puff;
     
     private Score _scoreScript;
+
+    private GamesManager _gamesManager;
+
+    private void Awake()
+    {
+        _gamesManager = FindObjectOfType<GamesManager>();
+        _gamesManager.StopAllSnapShots();
+        _gamesManager.snapshots[_gamesManager.currentLevel].start();
+        
+        _music = FMODUnity.RuntimeManager.CreateInstance("event:/Música/Fight song");
+        _music.start();
+        _puff = FMODUnity.RuntimeManager.CreateInstance("event:/Jogo da porrada/Puff");
+    }
 
     private void Start()
     {
@@ -38,8 +55,12 @@ public class LevelManager : MonoBehaviour
         condition = 0;
         
         _scoreScript = FindObjectOfType<Score>();
-        
-        puff = FMODUnity.RuntimeManager.CreateInstance("event:/Jogo da porrada/Puff");
+    }
+
+    private void OnDisable()
+    {
+        _music.stop(STOP_MODE.IMMEDIATE);
+        _puff.stop(STOP_MODE.IMMEDIATE);
     }
 
     private void Update()
@@ -97,7 +118,7 @@ public class LevelManager : MonoBehaviour
                 yield return new WaitForSeconds(1);
                 enemySpriteRenderer.sprite = Resources.Load<Sprite>("Sprites/Fight/skeletal");
                 yield return new WaitForSeconds(1);
-                puff.start();
+                _puff.start();
                 enemySpriteRenderer.sprite = Resources.Load<Sprite>("Sprites/Fight/Smoke");
             }
             
